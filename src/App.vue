@@ -1,31 +1,61 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="left-sidebar">
+      <Cart />
     </div>
-    <router-view />
+
+    <div class="right-sidebar">
+      <router-view />
+    </div>
   </div>
 </template>
+
+<script>
+import Cart from "@/components/Cart.vue";
+
+export default {
+  name: "app",
+  components: {
+    Cart
+  }
+};
+</script>
 
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display:block;
+  margin: 30px auto;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  max-width: 1200px;
+}
+
+.label {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  display: block;
+  float:left;
+  position: relative;
+  padding: 15px 30px;
+  background: #166cae;
+  color:#fff;
+  border: 0;
+  cursor: pointer;
+  margin-top: 50px;
   text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
+  text-transform: uppercase;
+  font-size: 15px;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+button:hover {
+  background: #0b5c99;
 }
 </style>
